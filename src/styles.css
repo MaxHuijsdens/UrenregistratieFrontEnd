@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.wt-bg-color {
+    background-color:#0f1410 !important 
+}
+.wt-font-color {
+    color:#bceb1b !important
+}
