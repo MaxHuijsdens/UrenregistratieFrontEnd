@@ -1,0 +1,18 @@
+<h2>Werknemerslijst</h2>
+
+<div *ngIf="werknemers">
+    <ul>
+        <li *ngFor="let werknemer of werknemers">
+            {{werknemer.voorletters}} {{werknemer.achternaam}} <br>
+            {{werknemer.email}} <br>
+            {{werknemer.mobielNummer}} <br>
+        </li>
+    </ul>
+</div>
+
+Aantal werknemers:<input [(ngModel)]="aantal" > 
+
+
+<button (click)="fillWerknemers()">Vul lijst met werknemers</button>
+
+
