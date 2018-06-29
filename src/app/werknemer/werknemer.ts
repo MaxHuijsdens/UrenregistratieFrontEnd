@@ -1,11 +1,5 @@
 export class Werknemer {
     id: number;
-    voorletters: string;
-    tussenvoegsel: string;
-    achternaam: string;
-    voornaam: string;
+    naam: string;
     email: string;
-    mobielNummer: string;
-    geslacht: string;
-
 }

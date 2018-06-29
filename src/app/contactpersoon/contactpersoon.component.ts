@@ -11,8 +11,18 @@ import { ContactpersoonService } from './contactpersoon.service';
 
 export class ContactpersoonComponent implements OnInit {
 
-  ngOnInit() {
+  contactpersonen:Contactpersoon[];
 
+  constructor(private contactpersoonService: ContactpersoonService){
+
+  }
+
+  getContactpersonen() : void {
+    this.contactpersoonService.getContactpersonen().subscribe(contactpersonen=>this.contactpersonen = contactpersonen);
+  }
+
+  ngOnInit() {
+    this.getContactpersonen();
   }
 
 }
