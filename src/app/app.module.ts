@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { WerknemerComponent } from './werknemer/werknemer.component';
@@ -17,7 +18,7 @@ const routes: Routes = [
   {path: 'contactpersoon', component:ContactpersoonComponent},
   {path: 'bedrijf', component:BedrijfComponent},
       
-  {path: '', component:WerknemerComponent}
+  {path: '', component:KandidaatComponent}
 
 ];
 
@@ -33,6 +34,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
