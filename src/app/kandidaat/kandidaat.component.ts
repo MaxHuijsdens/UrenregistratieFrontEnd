@@ -11,8 +11,27 @@ import { KandidaatService } from './kandidaat.service';
 
 export class KandidaatComponent implements OnInit {
 
-  ngOnInit() {
+  kandidaten:Kandidaat[];
 
+  newKandidaat: Kandidaat = new Kandidaat();
+
+  selectedKandidaat : Kandidaat;
+
+
+  constructor(private kandidaatService: KandidaatService){
+
+  }
+
+  getKandidaten() : void {
+    this.kandidaatService.getKandidaten().subscribe(kandidaten=>this.kandidaten = kandidaten);
+  }
+
+  onSelect(kandidaat: Kandidaat){
+    this.selectedKandidaat = kandidaat;
+  }
+
+  ngOnInit() {
+    this.getKandidaten();
   }
 
 }
