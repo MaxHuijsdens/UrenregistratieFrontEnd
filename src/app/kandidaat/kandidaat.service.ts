@@ -1,10 +1,14 @@
 import { Injectable }       from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Kandidaat } from './kandidaat';
 import { getMaxListeners } from 'cluster';
 import { map } from "rxjs/operators";
 import * as _ from 'lodash';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class KandidaatService {
@@ -34,8 +38,9 @@ export class KandidaatService {
     
     
       addKandidaat(kandidaat: Kandidaat) {
-        this.kandidaten.push(kandidaat);
-        this.storeKandidaten();
+        console.log(kandidaat);
+        //let kandidaatJs = kandidaat.json();
+        this.http.post<Kandidaat>("http://localhost:8082/api/kandidaat/create", kandidaat, httpOptions).subscribe(res => console.log(res));
       }
     
       storeKandidaten() {

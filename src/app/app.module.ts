@@ -12,6 +12,7 @@ import {KandidaatComponent} from './kandidaat/kandidaat.component';
 import { ContactpersoonComponent } from './contactpersoon/contactpersoon.component';
 import { BedrijfComponent } from './bedrijf/bedrijf.component';
 
+import { NieuwKandidaatComponent } from './nieuwKandidaat/nieuwKandidaat.component';
 const routes: Routes = [
   {path: 'werknemer', component:WerknemerComponent},
   {path: 'kandidaat', component:KandidaatComponent},
@@ -30,7 +31,8 @@ const routes: Routes = [
     WerknemerComponent,
     KandidaatComponent,
     ContactpersoonComponent,
-    BedrijfComponent
+    BedrijfComponent,
+    NieuwKandidaatComponent
   ],
   imports: [
     BrowserModule,
