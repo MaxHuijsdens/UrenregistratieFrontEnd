@@ -7,9 +7,16 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { WerknemerComponent } from './werknemer/werknemer.component';
+import {KandidaatComponent} from './kandidaat/kandidaat.component';
+import { ContactpersoonComponent } from './contactpersoon/contactpersoon.component';
+import { BedrijfComponent } from './bedrijf/bedrijf.component';
 
 const routes: Routes = [
   {path: 'werknemer', component:WerknemerComponent},
+  {path: 'kandidaat', component:KandidaatComponent},
+  {path: 'contactpersoon', component:ContactpersoonComponent},
+  {path: 'bedrijf', component:BedrijfComponent},
+      
   {path: '', component:WerknemerComponent}
 
 ];
@@ -20,6 +27,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     WerknemerComponent,
+    KandidaatComponent,
+    ContactpersoonComponent,
+    BedrijfComponent
   ],
   imports: [
     BrowserModule,
