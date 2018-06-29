@@ -1,1 +1,38 @@
-<h2>Contactpersonenlijst</h2>
+<div class="row">
+        
+        <div class="col" >
+            <div class="card">
+                <div class="card-body" >
+                    <h5 class="card-title">Contactpersonen</h5>
+                    <table class="table table-striped">
+                            <thead class="wt-bg-color wt-font-color">
+                                <tr>
+                                    <th>Naam</th>
+                                    <th>Telefoonnummer</th>
+                                    <th>E-mail</th>
+                                    <th>Bedrijf</th>
+                                    <th>Afdeling</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let contactpersoon of contactpersonen">
+                                    <td>{{contactpersoon.naam}}</td>
+                                    <td>{{contactpersoon.telefoonnummer}}</td>
+                                    <td>{{contactpersoon.email}}</td>
+                                    <td>To do</td>
+                                    <td>{{contactpersoon.afdeling}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+    
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
