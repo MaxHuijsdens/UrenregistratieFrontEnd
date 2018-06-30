@@ -34,5 +34,10 @@ export class KandidaatComponent implements OnInit {
     this.getKandidaten();
   }
 
+  onNieuwKandidaat(kan:Kandidaat) {
+    this.kandidaten.push(kan);
+   
+  }
+
 }
   

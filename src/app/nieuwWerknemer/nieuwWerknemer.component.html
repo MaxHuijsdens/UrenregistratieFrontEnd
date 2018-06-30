@@ -1,0 +1,11 @@
+<h5 class="card-title">Nieuwe werknemer</h5>
+
+<div class="form-group">
+    <label>Naam</label>
+    <input type="text" class="form-control" id="" placeholder="Naam" [(ngModel)]="nieuwWerknemer.naam">
+</div>
+<div class="form-group">
+    <label>E-mailadres</label>
+    <input type="email" class="form-control" id="" placeholder="E-mail" [(ngModel)]="nieuwWerknemer.email">
+</div>
+<button type="submit" class="btn btn-primary" (click)="voegWerknemerToe()">Opslaan</button>
