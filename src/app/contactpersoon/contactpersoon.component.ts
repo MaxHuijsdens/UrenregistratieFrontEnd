@@ -13,6 +13,10 @@ export class ContactpersoonComponent implements OnInit {
 
   contactpersonen:Contactpersoon[];
 
+  newContactpersoon : Contactpersoon = new Contactpersoon();
+
+  selectedContactpersoon : Contactpersoon;
+
   constructor(private contactpersoonService: ContactpersoonService){
 
   }
@@ -21,8 +25,16 @@ export class ContactpersoonComponent implements OnInit {
     this.contactpersoonService.getContactpersonen().subscribe(contactpersonen=>this.contactpersonen = contactpersonen);
   }
 
+  onSelect(contactpersoon:Contactpersoon) {
+    this.selectedContactpersoon = contactpersoon;
+  }
+
   ngOnInit() {
     this.getContactpersonen();
+  }
+
+  onNieuwContactpersoon(con:Contactpersoon){
+    this.contactpersonen.push(con);
   }
 
 }

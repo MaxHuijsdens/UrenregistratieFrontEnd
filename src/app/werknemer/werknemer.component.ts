@@ -13,6 +13,10 @@ export class WerknemerComponent implements OnInit {
 
   werknemers:Werknemer[];
 
+selectedWerknemer : Werknemer;
+
+newWerknemer : Werknemer = new Werknemer();
+
   constructor(private werknemerService: WerknemerService){
 
   }
@@ -21,8 +25,17 @@ export class WerknemerComponent implements OnInit {
     this.werknemerService.getWerknemers().subscribe(werknemers=> this.werknemers = werknemers);
   }
 
+  onSelect(werknemer:Werknemer) {
+    this.selectedWerknemer = werknemer;
+  }
+
+
   ngOnInit() {
     this.getWerknemers();
+  }
+
+  onNieuwWerknemer(wer:Werknemer) {
+    this.werknemers.push(wer);
   }
 
 }
