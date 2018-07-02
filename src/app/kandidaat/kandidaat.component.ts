@@ -28,6 +28,11 @@ export class KandidaatComponent implements OnInit {
 
   onSelect(kandidaat: Kandidaat){
     this.selectedKandidaat = kandidaat;
+    this.newKandidaat = null;
+  }
+
+  verwijder(kandidaat: Kandidaat) {
+    this.kandidaatService.removeKandidaat(kandidaat).subscribe(() => this.getKandidaten());
   }
 
   ngOnInit() {
@@ -36,7 +41,11 @@ export class KandidaatComponent implements OnInit {
 
   onNieuwKandidaat(kan:Kandidaat) {
     this.kandidaten.push(kan);
-   
+  }
+  onKandidaatWijzig(kan:Kandidaat) {
+    let k = this.kandidaten.find(x => x.id == kan.id);
+    let indexK = this.kandidaten.indexOf(k);
+    this.kandidaten[indexK] = kan;
   }
 
 }

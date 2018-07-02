@@ -11,6 +11,8 @@
                             <th>Telefoonnummer</th>
                             <th>E-mail</th>
                             <th>Bedrijf</th>
+                            <th></th>
+                            <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -19,6 +21,8 @@
                             <td>{{kandidaat.telefoonnummer}}</td>
                             <td>{{kandidaat.email}}</td>
                             <td>To do</td>
+                            <td><a href="javascript:void(0)" (click)="onSelect(kandidaat)">&#9998;</a></td>
+                            <td><a href="javascript:void(0)" (click)="verwijder(kandidaat)">&#10006;</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -30,6 +34,7 @@
         <div class="card">
             <div class="card-body">
                 <app-nieuwKandidaat [nieuwKandidaat]="newKandidaat" (toegevoegd)="onNieuwKandidaat($event)"></app-nieuwKandidaat>
+                <app-pasKandidaatAan [huidigKandidaat]="selectedKandidaat" (gewijzigd)="onKandidaatWijzig($event)"></app-pasKandidaatAan>
             </div>
         </div>
     </div>

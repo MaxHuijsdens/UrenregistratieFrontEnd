@@ -17,9 +17,11 @@ export class NieuwWerknemerComponent implements OnInit {
 
   voegWerknemerToe() {
     
-    this.werknemerService.addWerknemer(this.nieuwWerknemer);
-    this.toegevoegd.emit(this.nieuwWerknemer);
-    this.nieuwWerknemer = new Werknemer();
+    this.werknemerService.addWerknemer(this.nieuwWerknemer).subscribe(num => {
+      this.nieuwWerknemer.id=num;
+      this.toegevoegd.emit(this.nieuwWerknemer);
+      this.nieuwWerknemer = new Werknemer();
+    });
   }
   constructor(private werknemerService: WerknemerService){
   }

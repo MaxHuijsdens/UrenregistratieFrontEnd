@@ -12,13 +12,23 @@ export class ContactpersoonService {
     constructor(private http: HttpClient) {
     
     }
+
     getContactpersonen(): Observable<Contactpersoon[]> {
         return this.http.get<Contactpersoon[]>("http://localhost:8082/api/contactpersoon");
     }
 
-    addContactpersoon(contactpersoon: Contactpersoon) {
+    addContactpersoon(contactpersoon: Contactpersoon) : Observable<number> {
         console.log(contactpersoon);
-        this.http.post<Contactpersoon>("http://localhost:8082/api/contactpersoon/create", contactpersoon, httpOptions).subscribe(res => console.log(res));
-      }
+        return this.http.post<number>("http://localhost:8082/api/contactpersoon/create", contactpersoon, httpOptions).pipe();
+    }
+
+    updateContactpersoon(contactpersoon:Contactpersoon) {
+        console.log(contactpersoon);
+        this.http.put<Contactpersoon>("http://localhost:8082/api/contactpersoon/edit/"+contactpersoon.id, contactpersoon, httpOptions).subscribe(res => console.log(res));
+    }
+
+    removeContactpersoon(removeContactpersoon:Contactpersoon){
+        return this.http.delete("http://localhost:8082/api/contactpersoon/delete?id="+removeContactpersoon.id).pipe();
+    }
 
 }

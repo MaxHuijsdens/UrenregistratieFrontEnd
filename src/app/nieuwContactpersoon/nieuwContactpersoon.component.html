@@ -1,19 +1,21 @@
-<h5 class="card-title">Nieuw contactpersoon</h5>
+<div *ngIf="nieuwContactpersoon">
+    <h5 class="card-title">Nieuw contactpersoon</h5>
 
-<div class="form-group">
-    <label>Naam</label>
-    <input type="text" class="form-control" id="" placeholder="Naam" [(ngModel)]="nieuwContactpersoon.naam">
+    <div class="form-group">
+        <label>Naam</label>
+        <input type="text" class="form-control" id="" placeholder="Naam" [(ngModel)]="nieuwContactpersoon.naam">
+    </div>
+    <div class="form-group">
+        <label>E-mailadres</label>
+        <input type="email" class="form-control" id="" placeholder="E-mail" [(ngModel)]="nieuwContactpersoon.email">
+    </div>
+    <div class="form-group">
+        <label>Telefoonnummer</label>
+        <input type="text" class="form-control" id="" placeholder="Telefoonnummer" [(ngModel)]="nieuwContactpersoon.telefoonnummer">
+    </div>
+    <div class="form-group">
+        <label>Afdeling</label>
+        <input type="text" class="form-control" id="" placeholder="Afdeling" [(ngModel)]="nieuwContactpersoon.afdeling">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="voegContactpersoonToe()">Opslaan</button>
 </div>
-<div class="form-group">
-    <label>E-mailadres</label>
-    <input type="email" class="form-control" id="" placeholder="E-mail" [(ngModel)]="nieuwContactpersoon.email">
-</div>
-<div class="form-group">
-    <label>Telefoonnummer</label>
-    <input type="text" class="form-control" id="" placeholder="Telefoonnummer" [(ngModel)]="nieuwContactpersoon.telefoonnummer">
-</div>
-<div class="form-group">
-    <label>Afdeling</label>
-    <input type="text" class="form-control" id="" placeholder="Afdeling" [(ngModel)]="nieuwContactpersoon.afdeling">
-</div>
-<button type="submit" class="btn btn-primary" (click)="voegContactpersoonToe()">Opslaan</button>

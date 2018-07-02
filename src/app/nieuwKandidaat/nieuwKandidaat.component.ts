@@ -16,10 +16,14 @@ export class NieuwKandidaatComponent implements OnInit {
 
 
   voegKandidaatToe() {
+
+    this.kandidaatService.addKandidaat(this.nieuwKandidaat).subscribe(num => {
+      this.nieuwKandidaat.id = num;
+      console.log(this.nieuwKandidaat);
+      this.toegevoegd.emit(this.nieuwKandidaat);
+      this.nieuwKandidaat = new Kandidaat();
+     });
     
-    this.kandidaatService.addKandidaat(this.nieuwKandidaat);
-    this.toegevoegd.emit(this.nieuwKandidaat);
-    this.nieuwKandidaat = new Kandidaat();
   }
   constructor(private kandidaatService: KandidaatService){
   }

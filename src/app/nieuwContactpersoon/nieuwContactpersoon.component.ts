@@ -17,9 +17,11 @@ export class NieuwContactpersoonComponent implements OnInit {
 
   voegContactpersoonToe() {
     
-    this.contactpersoonService.addContactpersoon(this.nieuwContactpersoon);
-    this.toegevoegd.emit(this.nieuwContactpersoon);
-    this.nieuwContactpersoon = new Contactpersoon();
+    this.contactpersoonService.addContactpersoon(this.nieuwContactpersoon).subscribe(num => {
+      this.nieuwContactpersoon.id=num;
+      this.toegevoegd.emit(this.nieuwContactpersoon);
+      this.nieuwContactpersoon = new Contactpersoon();
+    });
   }
   constructor(private contactpersoonService: ContactpersoonService){
   }
