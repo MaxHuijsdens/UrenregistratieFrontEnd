@@ -16,9 +16,18 @@ export class WerknemerService {
         return this.http.get<Werknemer[]>("http://localhost:8082/api/werknemer");
     }
 
-    addWerknemer(werknemer: Werknemer) {
+    addWerknemer(werknemer: Werknemer) : Observable<number> {
         console.log(werknemer);
-        this.http.post<Werknemer>("http://localhost:8082/api/werknemer/create", werknemer, httpOptions).subscribe(res => console.log(res));
-      }
+        return this.http.post<number>("http://localhost:8082/api/werknemer/create", werknemer, httpOptions).pipe();
+    }
+
+    updateWerknemer(werknemer:Werknemer) {
+        console.log(werknemer);
+        this.http.put<Werknemer>("http://localhost:8082/api/werknemer/editWerknemer/"+werknemer.id, werknemer, httpOptions).subscribe(res => console.log(res));
+    }
+
+    removeWerknemer(removeWerknemer:Werknemer){
+        return this.http.delete("http://localhost:8082/api/werknemer/deleteWerknemer?id="+removeWerknemer.id).pipe();
+    }
 
 }

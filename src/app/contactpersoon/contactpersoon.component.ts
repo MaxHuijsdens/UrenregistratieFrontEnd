@@ -27,6 +27,7 @@ export class ContactpersoonComponent implements OnInit {
 
   onSelect(contactpersoon:Contactpersoon) {
     this.selectedContactpersoon = contactpersoon;
+    this.newContactpersoon = null;
   }
 
   ngOnInit() {
@@ -35,6 +36,14 @@ export class ContactpersoonComponent implements OnInit {
 
   onNieuwContactpersoon(con:Contactpersoon){
     this.contactpersonen.push(con);
+  }
+  onContactpersoonWijzig(con:Contactpersoon) {
+    let k = this.contactpersonen.find(x => x.id == con.id);
+    let indexK = this.contactpersonen.indexOf(k);
+    this.contactpersonen[indexK] = con;
+  }
+  verwijder(contactpersoon: Contactpersoon) {
+    this.contactpersoonService.removeContactpersoon(contactpersoon).subscribe(() => this.getContactpersonen());
   }
 
 }

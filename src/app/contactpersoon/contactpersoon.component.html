@@ -12,6 +12,8 @@
                                     <th>E-mail</th>
                                     <th>Bedrijf</th>
                                     <th>Afdeling</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -21,6 +23,8 @@
                                     <td>{{contactpersoon.email}}</td>
                                     <td>To do</td>
                                     <td>{{contactpersoon.afdeling}}</td>
+                                    <td><a href="javascript:void(0)" (click)="onSelect(contactpersoon)">&#9998;</a></td>
+                                    <td><a href="javascript:void(0)" (click)="verwijder(contactpersoon)">&#10006;</a></td>        
                                 </tr>
                             </tbody>
                         </table>
@@ -32,6 +36,7 @@
             <div class="card">
                 <div class="card-body">
                     <app-nieuwContactpersoon [nieuwContactpersoon]="newContactpersoon" (toegevoegd)="onNieuwContactpersoon($event)"></app-nieuwContactpersoon>
+                    <app-pasContactpersoonAan [huidigContactpersoon]="selectedContactpersoon" (gewijzigd)="onContactpersoonWijzig($event)"></app-pasContactpersoonAan>
 
                 </div>
             </div>

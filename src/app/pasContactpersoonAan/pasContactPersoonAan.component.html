@@ -1,1 +1,22 @@
-<h5 class="card-title">Nieuw contactpersoon</h5>
+<div *ngIf="huidigContactpersoon">
+    <h5 class="card-title">{{huidigContactpersoon.naam}}</h5>
+
+    <div class="form-group">
+        <label>Naam</label>
+        <input type="text" class="form-control" id="" placeholder="Naam" [(ngModel)]="huidigContactpersoon.naam">
+    </div>
+    <div class="form-group">
+        <label>E-mailadres</label>
+        <input type="email" class="form-control" id="" placeholder="E-mail" [(ngModel)]="huidigContactpersoon.email">
+    </div>
+    <div class="form-group">
+        <label>Telefoonnummer</label>
+        <input type="text" class="form-control" id="" placeholder="Telefoonnummer" [(ngModel)]="huidigContactpersoon.telefoonnummer">
+    </div>
+    <div class="form-group">
+        <label>Afdeling</label>
+        <input type="text" class="form-control" id="" placeholder="Afdeling" [(ngModel)]="huidigContactpersoon.afdeling">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="pasContactpersoonAan()">Opslaan</button>
+
+</div>

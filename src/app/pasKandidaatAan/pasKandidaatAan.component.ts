@@ -12,8 +12,13 @@ import { KandidaatService } from '../kandidaat/kandidaat.service';
 export class PasKandidaatAanComponent implements OnInit {
 
   @Input() huidigKandidaat: Kandidaat;
-  @Output() toegevoegd = new EventEmitter<Kandidaat>();
+  @Output() gewijzigd = new EventEmitter<Kandidaat>();
 
+
+  pasKandidaatAan() {
+    this.kandidaatService.updateKandidaat(this.huidigKandidaat);
+    this.gewijzigd.emit(this.huidigKandidaat);
+  }
 
   constructor(private kandidaatService: KandidaatService){
   }

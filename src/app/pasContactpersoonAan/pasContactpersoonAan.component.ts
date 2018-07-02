@@ -11,15 +11,13 @@ import { ContactpersoonService } from '../contactpersoon/contactpersoon.service'
 
 export class PasContactpersoonAanComponent implements OnInit {
 
-  @Input() aanpasContactpersoon: Contactpersoon;
-  @Output() toegevoegd = new EventEmitter<Contactpersoon>();
+  @Input() huidigContactpersoon: Contactpersoon;
+  @Output() gewijzigd = new EventEmitter<Contactpersoon>();
 
 
-  voegContactpersoonToe() {
-    
-    //this.kandidaatService.addKandidaat(this.nieuwKandidaat);
-    //this.toegevoegd.emit(this.nieuwKandidaat);
-    //this.nieuwKandidaat = new Kandidaat();
+  pasContactpersoonAan() {
+    this.contactpersoonService.updateContactpersoon(this.huidigContactpersoon);
+    this.gewijzigd.emit(this.huidigContactpersoon);
   }
   constructor(private contactpersoonService: ContactpersoonService){
   }

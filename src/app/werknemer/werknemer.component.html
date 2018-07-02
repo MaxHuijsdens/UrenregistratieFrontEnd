@@ -9,12 +9,16 @@
                                 <tr>
                                 <th>Naam</th>
                                 <th>E-mail</th>
+                                <th></th>
+                                <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let werknemer of werknemers">
                                 <td>{{werknemer.naam}}</td>
                                 <td>{{werknemer.email}}</td>
+                                <td><a href="javascript:void(0)" (click)="onSelect(werknemer)">&#9998;</a></td>
+                                <td><a href="javascript:void(0)" (click)="verwijder(werknemer)">&#10006;</a></td>        
                                 </tr>
                             </tbody>
                         </table>
@@ -26,6 +30,7 @@
             <div class="card">
                 <div class="card-body">
                     <app-nieuwWerknemer [nieuwWerknemer]="newWerknemer" (toegevoegd)="onNieuwWerknemer($event)"></app-nieuwWerknemer>
+                    <app-pasWerknemerAan [huidigWerknemer]="selectedWerknemer" (gewijzigd)="onWerknemerWijzig($event)"></app-pasWerknemerAan>
 
                 </div>
             </div>
