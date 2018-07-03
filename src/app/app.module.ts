@@ -18,12 +18,14 @@ import { NieuwContactpersoonComponent } from './nieuwContactpersoon/nieuwContact
 import { PasContactpersoonAanComponent } from './pasContactpersoonAan/pasContactpersoonAan.component';
 import { NieuwWerknemerComponent} from './nieuwWerknemer/nieuwWerknemer.component';
 import { PasWerknemerAanComponent } from './pasWerknemerAan/pasWerknemerAan.component';
+import { UrenregistratieComponent } from './urenregistratie/urenregistratie.component';
+
 const routes: Routes = [
   {path: 'werknemer', component:WerknemerComponent},
   {path: 'kandidaat', component:KandidaatComponent},
   {path: 'contactpersoon', component:ContactpersoonComponent},
   {path: 'bedrijf', component:BedrijfComponent},
-      
+  {path: 'urenregistratie', component:UrenregistratieComponent},
   {path: '', component:KandidaatComponent}
 
 ];
@@ -43,6 +45,7 @@ const routes: Routes = [
     PasContactpersoonAanComponent,
     NieuwWerknemerComponent,
     PasWerknemerAanComponent,
+    UrenregistratieComponent
   ],
   imports: [
     BrowserModule,
