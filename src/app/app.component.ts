@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import * as powerTip from 'jquery-powerTip';
+import * as $ from 'jquery';
 
-declare var $:JQuery;
 
 declare global {
   interface JQuery {
