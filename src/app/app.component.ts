@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as powerTip from 'jquery-powerTip'
+import * as powerTip from 'jquery-powerTip';
 
 declare var $:JQuery;
 

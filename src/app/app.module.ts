@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
 import { AppComponent } from './app.component';
 import { WerknemerComponent } from './werknemer/werknemer.component';
 import {KandidaatComponent} from './kandidaat/kandidaat.component';
@@ -19,6 +18,7 @@ import { PasContactpersoonAanComponent } from './pasContactpersoonAan/pasContact
 import { NieuwWerknemerComponent} from './nieuwWerknemer/nieuwWerknemer.component';
 import { PasWerknemerAanComponent } from './pasWerknemerAan/pasWerknemerAan.component';
 import { UrenregistratieComponent } from './urenregistratie/urenregistratie.component';
+
 
 const routes: Routes = [
   {path: 'werknemer', component:WerknemerComponent},

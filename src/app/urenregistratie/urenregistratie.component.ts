@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Urenregistratie } from './urenregistratie';
 import { UrenregistratieService } from './urenregistratie.service';
-import * as powerTip from 'jquery-powerTip'
+import * as powerTip from 'jquery-powerTip';
 
 
 @Component({
