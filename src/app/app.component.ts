@@ -9,7 +9,7 @@ declare global {
     powerTip: any;
   }
 }
-
+//Geeft aan welke html en css bestanden bij dit component horen
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
