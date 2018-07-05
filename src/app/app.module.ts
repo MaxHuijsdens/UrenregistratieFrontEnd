@@ -19,7 +19,8 @@ import { NieuwWerknemerComponent} from './nieuwWerknemer/nieuwWerknemer.componen
 import { PasWerknemerAanComponent } from './pasWerknemerAan/pasWerknemerAan.component';
 import { UrenregistratieComponent } from './urenregistratie/urenregistratie.component';
 
-
+//De routes registreren welk Component moet worden geladen bij welk path. 
+//Bv: localhost:4200/werknemer zal de WerknemerComponent inladen
 const routes: Routes = [
   {path: 'werknemer', component:WerknemerComponent},
   {path: 'kandidaat', component:KandidaatComponent},
@@ -30,8 +31,7 @@ const routes: Routes = [
 
 ];
 
-
-
+//Alle components hier declareren
 @NgModule({
   declarations: [
     AppComponent,
